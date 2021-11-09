@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //深层拷贝，先遍历，用递归法
+        let obj1 = {
+            name:'怎么一直在取名字',
+            age:"1111",
+            gender:'mmmmale',
+            sayHi:{
+                innn:"Hiiiiiiii!",
+            }
+        };
+        let obj2={};
+        let copy = (item) => {
+            if(item instanceof Object==true) {
+                let obj={};
+                for(let key in item) {
+                obj[key]=copy(item[key]);
+                }
+                return obj;
+            }
+            else {
+                return item;
+            } 
+        }
+        obj2=copy(obj1);
+        console.log(obj2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

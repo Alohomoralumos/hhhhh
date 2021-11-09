@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //浅拷贝
+        let obj1 = {
+            name:'hhh',
+            age:'18',
+            gender:'girl'
+        } 
+        //方法一：使用for...in...遍历对象1中的!!!属性!!!拷贝到对象2。
+        /*let obj2 = {};
+        for(let key in obj1)
+        {
+            obj1[key]=obj2[key];
+            //或obj2.key;
+        }
+        obj2.name='hhhhh';
+        obj2.age='111111188888';
+        obj2.gender='girlllll';*/
+        //方法二：使用Object.assign(dest,[src1,src2,src3,src4...])(dest:拷贝的目标对象以及返回的对象，src:要拷贝的内容)
+        let obj2={};
+        Object.assign(obj2,obj1); 
+        console.log(obj2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
